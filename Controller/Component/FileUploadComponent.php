@@ -12,7 +12,7 @@
 */
 App::import('Vendor', 'FileUpload.uploader');
 App::import('Config', 'FileUpload.file_upload_settings');
-class FileUploadComponent extends Object{
+class FileUploadComponent extends Component{
   /**
     * options are the default options that will be used
     * 

@@ -37,7 +37,7 @@ class FileUploadSettings {
       * if you don't wish to use a database, simply set this to null in a controller
       *  $this->FileUpload->fileModel(null);
       */
-    'fileModel' => 'Upload',
+    'fileModel' => 'Logo',
     
     /**
       * Component and Behavior Setting.
@@ -191,4 +191,3 @@ class FileUploadSettings {
   );
 
 }
-?>

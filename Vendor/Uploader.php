@@ -123,6 +123,7 @@ class Uploader {
     * @access public
     */
   function processFile($file = null){
+	  ?>processFIle has been called<?php
     $this->setFile($file);
     
     //check if we have a file and if we allow the type, return false otherwise.

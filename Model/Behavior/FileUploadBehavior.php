@@ -43,6 +43,7 @@ class FileUploadBehavior extends ModelBehavior {
     * Setup the behavior
     */
   function setUp(&$Model, $options = array()){
+	  
     $FileUploadSettings = new FileUploadSettings();
     if(!is_array($options)){
       $options = array();
@@ -53,6 +54,8 @@ class FileUploadBehavior extends ModelBehavior {
     $uploader_settings['uploadDir'] = $this->options[$Model->alias]['forceWebroot'] ? WWW_ROOT . $uploader_settings['uploadDir'] : $uploader_settings['uploadDir']; 
     $uploader_settings['fileModel'] = $Model->alias;
     $this->Uploader[$Model->alias] = new Uploader($uploader_settings);
+	//var_dump($this->Uploader);
+	//echo "upload directory " . $uploader_settings['uploadDir'];
   }
  
   /**
@@ -60,6 +63,7 @@ class FileUploadBehavior extends ModelBehavior {
     *
     */
   function beforeSave(&$Model){
+	  ?>beforesave has been called.<?php
     if(isset($Model->data[$Model->alias][$this->options[$Model->alias]['fileVar']])){
       $file = $Model->data[$Model->alias][$this->options[$Model->alias]['fileVar']];
       $this->Uploader[$Model->alias]->file = $file;
@@ -87,6 +91,7 @@ class FileUploadBehavior extends ModelBehavior {
     * presents the user the errors.
     */
   function beforeValidate(&$Model){
+	  ?>beforevalidate has been called.<?php
     if(isset($Model->data[$Model->alias][$this->options[$Model->alias]['fileVar']])){
       $file = $Model->data[$Model->alias][$this->options[$Model->alias]['fileVar']];
       $this->Uploader[$Model->alias]->file = $file;
@@ -122,4 +127,3 @@ class FileUploadBehavior extends ModelBehavior {
   }
   
 }
-?>

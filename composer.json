@@ -1,5 +1,5 @@
 {
-	"name": "naterkane/cakephp-facebook-plugin",
+	"name": "naterkane/cakephp-fileupload-plugin",
 	"description": "CakePHP FileUpload Plugin",
 	"type": "cakephp-plugin",
 	"keywords": ["cakephp", "upload", "fileupload"],
